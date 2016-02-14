@@ -1,19 +1,18 @@
 <html>
     <head>
-        <script src="./lib/system.js"></script>
-        <script src="./lib/angular.js"></script>
-        <script src="./app/testing/controller/testingCtrl.js"></script>
-        <script src="./app/app.module.js"></script>
-        
-        <!-- <script>
+        <script src="./lib/system.js"></script>        
+        <script>
             System.config({
                 defaultJSExtensions: true,
-                baseUrl: '/app'
+                baseUrl: '/app',
+                map: {
+                    'angular': '/lib/angular'
+                }
             });
         </script>
         <script>
-            System.import('./app/app.module').catch(console.log.bind(console));
-        </script> -->        
+            System.import('app/app.module').catch(console.log.bind(console));
+        </script>        
     </head>
     <body  ng-app="testing">
         <div ng-controller="todoCtrl">

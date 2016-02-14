@@ -1,14 +1,10 @@
-/// <reference path='../../../references.ts' />
+import { ITestingScope } from '../interface/ITestingScope';
 
-module appTesting {
-    'use strict';
+export class TestingCtrl {
         
-    export class TestingCtrl {
-        
-        public static $inject = ['$scope'];
-        
-        constructor(private $scope: ITestingScope){
-            $scope.name = 'khris';
-        }
+    public static $inject = ['$scope'];
+    
+    constructor(private $scope: ITestingScope){
+        $scope.name = 'khris';
     }
 }

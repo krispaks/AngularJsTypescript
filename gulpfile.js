@@ -7,7 +7,7 @@ var paths = {
 	npm: './node_modules/',
     bower: './bower_components/',
 	lib: './wwwroot/lib/',
-	app: './wwwroot/',
+	app: './wwwroot/app/',
 	tsRoot: './app/'
 };
 
@@ -46,8 +46,7 @@ gulp.task('tscompile', function () {
                         target: 'es5',
                         module: 'commonjs',
                         experimentalDecorators: true,
-                        emitDecoratorMetadata: true,
-                        outDir: 'wwwroot/app'
+                        emitDecoratorMetadata: true
                     }));
     
     //var tsResult = gulp.src(paths.tsRoot + '**/*.ts')

@@ -1,8 +1,7 @@
-/// <reference path='../references.ts' />
+import 'angular';
 
-module appTesting {
-    'use strict';
-    
-    var testing = angular.module('testing', [])
-        .controller('todoCtrl', TestingCtrl);
-}
+import { TestingCtrl  } from './testing/controller/testingCtrl'; 
+
+export var app = angular.module('testing', []);
+
+app.controller('todoCtrl', TestingCtrl)
