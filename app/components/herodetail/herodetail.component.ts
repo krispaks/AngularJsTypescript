@@ -7,11 +7,7 @@ class HeroDetailCtrl implements IHeroDetail {
     public hero: string = '';
     public ability: string = '';
     public strength: number = 0;
-    constructor(){
-        var ctrl = this;
-        ctrl.hero = 'anonymous1';
-        ctrl.ability = 'invisible';
-        ctrl.strength = 200;
+    constructor(){        
     }
 }
 
@@ -25,7 +21,9 @@ export class HeroDetailComponent implements ng.IComponentOptions {
         component.templateUrl = './app/components/herodetail/herodetail.template.html';
         component.controller = HeroDetailCtrl;
         component.bindings = {
-            hero: '@'
+            hero: '@',
+            ability: '@',
+            strength: '@'
         }
     }
 }
