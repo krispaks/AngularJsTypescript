@@ -44,7 +44,7 @@ gulp.task('tscompile', function () {
                         removeComments: true,
                         sourceMap: false,
                         target: 'es5',
-                        module: 'commonjs',
+                        module: 'amd',
                         experimentalDecorators: true,
                         emitDecoratorMetadata: true
                     }));
