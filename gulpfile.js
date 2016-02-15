@@ -48,19 +48,6 @@ gulp.task('tscompile', function () {
                         experimentalDecorators: true,
                         emitDecoratorMetadata: true
                     }));
-    
-    //var tsResult = gulp.src(paths.tsRoot + '**/*.ts')
-    //    .pipe(ts({
-    //    noImplicitAny: false,
-    //    noEmitOnError: true,
-    //    removeComments: true,
-    //    sourceMap: false,
-    //    target: 'es5',
-    //    module: 'commonjs',
-    //    experimentalDecorators: true,
-    //    emitDecoratorMetadata: true,
-    //    outDir: 'wwwroot/app'
-    //}));
 
 	return tsResult.js
 	.pipe(gulp.dest(paths.app));	
@@ -70,17 +57,4 @@ gulp.task('tscompile', function () {
 gulp.task('serve', function(){
     var server = gls.static('wwwroot', 3000);
     server.start();    
-});
-
-// tsc
-gulp.task('tsc', function(){
-   gulp.src(paths.tsRoot + 'testing/controller/*.ts')
-        .pipe(tsc({
-            removeComments: true,
-            target: 'ES5',
-            module: 'commonjs',
-            experimentalDecorators: true,
-            emitDecoratorMetadata: true,
-        }))
-        .pipe(gulp.dest(paths.app));
 });

@@ -1,6 +1,6 @@
 /// <reference path='../../../references.ts' />
 
-export interface HeroDetailScope extends ng.IScope {
+export interface IHeroDetailScope extends ng.IScope {
     ability: string;
     strength: number;    
 }

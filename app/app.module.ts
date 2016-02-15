@@ -1,3 +1,5 @@
+'use strict';
+
 import 'angular';
 
 import { TestingCtrl  } from './testing/controller/testingCtrl';
