@@ -1,5 +1,5 @@
 /// <reference path='../../../references.ts' />
 
-export interface ITestingScope extends ng.IScope {
+export interface TestingScope extends ng.IScope {
     name: string;
 }

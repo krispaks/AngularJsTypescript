@@ -1,10 +1,10 @@
-import { ITestingScope } from '../interface/ITestingScope';
+import { TestingScope } from '../interface/TestingScope';
 
 export class TestingCtrl {
         
     public static $inject = ['$scope'];
     
-    constructor(private $scope: ITestingScope){
+    constructor(private $scope: TestingScope){
         $scope.name = 'khris';
     }
 }
