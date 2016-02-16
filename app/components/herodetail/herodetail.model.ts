@@ -1,5 +1,3 @@
-/// <reference path='../../../references.ts' />
-
 export interface IHeroDetailCtrl {
     hero: IHeroDetail;
 }

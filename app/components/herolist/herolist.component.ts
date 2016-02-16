@@ -1,6 +1,5 @@
 'use strict';
 
-import 'angular';
 import {IHeroListCtrl, Hero} from './herolist.model';
 import {IHeroDetail} from '../herodetail/herodetail.model';
 

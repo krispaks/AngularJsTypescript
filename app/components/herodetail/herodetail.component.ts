@@ -1,7 +1,6 @@
 'use strict';
 
 import { IHeroDetail, IHeroDetailCtrl } from './herodetail.model';
-import 'angular';
 
 class HeroDetailCtrl implements IHeroDetailCtrl {
     public hero: IHeroDetail;
