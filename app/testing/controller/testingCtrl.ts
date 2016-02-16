@@ -5,6 +5,6 @@ export class TestingCtrl {
     public static $inject = ['$scope'];
     
     constructor(private $scope: TestingScope){
-        $scope.name = 'khris';
+        $scope.name = 'Team Pineapple';
     }
 }

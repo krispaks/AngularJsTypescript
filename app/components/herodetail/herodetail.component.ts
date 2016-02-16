@@ -1,12 +1,10 @@
 'use strict';
 
-import { IHeroDetail } from './herodetail.model';
+import { IHeroDetail, IHeroDetailCtrl } from './herodetail.model';
 import 'angular';
 
-class HeroDetailCtrl implements IHeroDetail {
-    public hero: string = '';
-    public ability: string = '';
-    public strength: number = 0;
+class HeroDetailCtrl implements IHeroDetailCtrl {
+    public hero: IHeroDetail;
     constructor(){        
     }
 }
@@ -21,9 +19,7 @@ export class HeroDetailComponent implements ng.IComponentOptions {
         component.templateUrl = './app/components/herodetail/herodetail.template.html';
         component.controller = HeroDetailCtrl;
         component.bindings = {
-            hero: '@',
-            ability: '@',
-            strength: '@'
+            hero: '<'
         }
     }
 }

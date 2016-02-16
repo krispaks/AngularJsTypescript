@@ -1,14 +1,10 @@
 'use strict';
 
 import 'angular';
-import {IHeroList} from './herolist.model';
+import {IHeroListCtrl, Hero} from './herolist.model';
 import {IHeroDetail} from '../herodetail/herodetail.model';
 
-class Hero implements IHeroDetail {
-    constructor(public hero: string, public ability: string, public strength: number){}
-}
- 
-class HeroListCtrl implements IHeroList {
+class HeroListCtrl implements IHeroListCtrl {
     
     // this should call a service    
     public heroList: Array<IHeroDetail> = [];

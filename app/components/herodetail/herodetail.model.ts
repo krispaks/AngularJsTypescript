@@ -1,7 +1,11 @@
 /// <reference path='../../../references.ts' />
 
+export interface IHeroDetailCtrl {
+    hero: IHeroDetail;
+}
+
 export interface IHeroDetail {
-    hero: string;
+    name: string;
     ability: string;
     strength: number;    
 }
