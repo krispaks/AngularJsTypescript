@@ -1,19 +1,18 @@
 'use strict';
 
-import {IHeroListCtrl, Hero} from './herolist.model';
+import {IHeroListCtrl, IHeroListService} from './herolist.model';
 import {IHeroDetail} from '../herodetail/herodetail.model';
 
 class HeroListCtrl implements IHeroListCtrl {
     
     // this should call a service    
     public heroList: Array<IHeroDetail> = [];
+    private heroListService: IHeroListService;
     
-    constructor(){
+    constructor($http: ng.IHttpService, heroListService: IHeroListService ){
         let ctrl = this;
         
-        ctrl.heroList = [new Hero('superman', 'flying', 1000)
-                        , new Hero('batman', 'nothing', 10)
-                        , new Hero('magneto', 'bully', 500)];                
+        ctrl.heroList = heroListService.GetHeroes();                
     }
 }
 

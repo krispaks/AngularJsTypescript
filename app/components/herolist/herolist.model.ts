@@ -7,3 +7,7 @@ export class Hero implements IHeroDetail {
 export interface IHeroListCtrl {
     heroList: Array<IHeroDetail>;
 }
+
+export interface IHeroListService {
+    GetHeroes() : Array<IHeroDetail>;
+}
