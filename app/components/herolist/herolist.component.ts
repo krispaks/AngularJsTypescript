@@ -9,7 +9,7 @@ class HeroListCtrl implements IHeroListCtrl {
     public heroList: Array<IHeroDetail> = [];
     private heroListService: IHeroListService;
     
-    constructor($http: ng.IHttpService, heroListService: IHeroListService ){
+    constructor(heroListService: IHeroListService ){
         let ctrl = this;
         
         ctrl.heroList = heroListService.GetHeroes();                
@@ -19,9 +19,11 @@ class HeroListCtrl implements IHeroListCtrl {
 export class HeroListComponent implements ng.IComponentOptions {
     public templateUrl: string;
     public controller: any;
+    public transclude: boolean;
     constructor(){
         let component = this;
         component.templateUrl = './app/components/herolist/herolist.template.html';
         component.controller = HeroListCtrl;
+        component.transclude = true
     }
 }
