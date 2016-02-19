@@ -23,19 +23,7 @@ gulp.task('libs', function () {
 });
 
 // tscompile
-gulp.task('tscompile', function () {
-
-	/*var tsResult = tsProject.src()
-	               .pipe(ts({
-                        noImplicitAny: false,
-                        noEmitOnError: true,
-                        removeComments: true,
-                        sourceMap: false,
-                        target: 'es5',
-                        module: 'amd',
-                        experimentalDecorators: true,
-                        emitDecoratorMetadata: true
-                    }));*/
+gulp.task('tscompile', function () {	
     var tsResult = tsProject.src()
     .pipe(ts(tsProject));
 

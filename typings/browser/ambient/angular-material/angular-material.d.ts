@@ -1,9 +1,10 @@
+// Compiled using typings@0.6.8
+// Source: https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/2d0a1b1502610025bd55ce8eaa48069da8a16c82/angular-material/angular-material.d.ts
 // Type definitions for Angular Material 1.0.0-rc5+ (angular.material module)
 // Project: https://github.com/angular/material
 // Definitions by: Matt Traynham <https://github.com/mtraynham>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-/// <reference path="../angularjs/angular.d.ts" />
 declare module angular.material {
 
     interface IBottomSheetOptions {

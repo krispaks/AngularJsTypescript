@@ -7,12 +7,12 @@ class HeroListCtrl implements IHeroListCtrl {
     
     // this should call a service    
     public heroList: Array<IHeroDetail> = [];
-    private heroListService: IHeroListService;
+    static $inject = ['heroListService'];
     
-    constructor(heroListService: IHeroListService ){
-        let ctrl = this;
+    constructor(private heroListService: IHeroListService ){
+        let ctrl = this;  
         
-        ctrl.heroList = heroListService.GetHeroes();                
+        ctrl.heroList = heroListService.GetHeroes();
     }
 }
 

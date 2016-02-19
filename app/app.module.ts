@@ -1,4 +1,4 @@
-/// <reference path='../references.ts' />
+/// <reference path='../typings/browser.d.ts' />
 'use strict';
 
 import 'angular';
