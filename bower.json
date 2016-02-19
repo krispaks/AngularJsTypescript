@@ -1,7 +1,8 @@
 {
-    "name": "AngularJsTypescript",
-    "version": "1.0.0",
-    "dependencies": {
-        "angular": "1.5.0"
-    }
+  "name": "AngularJsTypescript",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "1.5.0",
+    "angular-material": "^1.0.5"
+  }
 }

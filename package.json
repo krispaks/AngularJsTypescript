@@ -3,13 +3,10 @@
   "name": "AngularJsTypescript",
   "private": true,
   "dependencies": {
-      "systemjs": "0.19.6"
+    "systemjs": "0.19.6"
   },
   "devDependencies": {
     "gulp": "3.9.1",
-    "gulp-typescript": "2.11.0",
-    "gulp-live-server": "0.0.29",
-    "typescript": "1.7.5",
-    "gulp-tsc": "1.1.4"
+    "gulp-typescript": "2.11.0"
   }
 }

@@ -1,7 +1,5 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
-var gls = require('gulp-live-server');
-var tsc = require('gulp-tsc');
 
 var paths = {
 	npm: './node_modules/',
@@ -12,16 +10,6 @@ var paths = {
 };
 
 var tsProject = ts.createProject(paths.tsRoot + 'tsconfig.json');
-var tsProject1 = ts.createProject({
-    noImplicitAny: false,
-    noEmitOnError: true,
-    removeComments: true,
-    sourceMap: false,
-    target: 'es5',
-    module: 'amd',
-    experimentalDecorators: true,
-    emitDecoratorMetadata: true
-});
 
 var libs = [
     paths.bower + 'angular/angular.js',
@@ -37,7 +25,7 @@ gulp.task('libs', function () {
 // tscompile
 gulp.task('tscompile', function () {
 
-	var tsResult = tsProject.src()
+	/*var tsResult = tsProject.src()
 	               .pipe(ts({
                         noImplicitAny: false,
                         noEmitOnError: true,
@@ -47,14 +35,10 @@ gulp.task('tscompile', function () {
                         module: 'amd',
                         experimentalDecorators: true,
                         emitDecoratorMetadata: true
-                    }));
+                    }));*/
+    var tsResult = tsProject.src()
+    .pipe(ts(tsProject));
 
 	return tsResult.js
 	.pipe(gulp.dest(paths.app));	
-});
-
-// lite server
-gulp.task('serve', function(){
-    var server = gls.static('wwwroot', 3000);
-    server.start();    
 });

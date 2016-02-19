@@ -279,6 +279,7 @@ declare module angular {
         service(object: Object): IModule;
         /**
          * Register a value service with the $injector, such as a string, a number, an array, an object or a function. This is short for registering a service where its provider's $get property is a factory function that takes no arguments and returns the value service.
+
            Value services are similar to constant services, except that they cannot be injected into a module configuration function (see config) but they can be overridden by an Angular decorator.
          *
          * @param name The name of the instance.
@@ -1684,7 +1685,7 @@ declare module angular {
          * Controller constructor function that should be associated with newly created scope or the name of a registered
          * controller if passed as a string. Empty function by default.
          */
-        controller?: string | Function;
+        controller?: any;
         /**
          * An identifier name for a reference to the controller. If present, the controller will be published to scope under
          * the controllerAs name. If not present, this will default to be the same as the component name.
@@ -1714,15 +1715,7 @@ declare module angular {
          * Whether transclusion is enabled. Enabled by default.
          */
         transclude?: boolean;
-        /**
-         * Whether the new scope is isolated. Isolated by default.
-         */
-        isolate?: boolean;
-        /**
-         * String of subset of EACM which restricts the component to specific directive declaration style. If omitted,
-         * this defaults to 'E'.
-         */
-        restrict?: string;
+        require? : Object;
         $canActivate?: () => boolean;
         $routeConfig?: RouteDefinition[];
     }
@@ -1773,12 +1766,12 @@ declare module angular {
         name?: string;
         priority?: number;
         replace?: boolean;
-        require?: any;
+        require? : any;
         restrict?: string;
         scope?: any;
-        template?: any;
+        template?: string | Function;
         templateNamespace?: string;
-        templateUrl?: any;
+        templateUrl?: string | Function;
         terminal?: boolean;
         transclude?: any;
     }
