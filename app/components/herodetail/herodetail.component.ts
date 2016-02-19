@@ -16,7 +16,7 @@ export class HeroDetailComponent implements ng.IComponentOptions {
     public bindings: any = {};
     constructor(){
         let component = this;
-        component.templateUrl = './app/components/herodetail/herodetail.template.html';
+        component.templateUrl = '../templates/herodetail/herodetail.template.html';
         component.controller = HeroDetailCtrl;
         component.transclude = true;
         component.bindings = {

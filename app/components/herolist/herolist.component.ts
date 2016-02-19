@@ -22,7 +22,7 @@ export class HeroListComponent implements ng.IComponentOptions {
     public transclude: boolean;
     constructor(){
         let component = this;
-        component.templateUrl = './app/components/herolist/herolist.template.html';
+        component.templateUrl = '../templates/herolist/herolist.template.html';
         component.controller = HeroListCtrl;
         component.transclude = true
     }
