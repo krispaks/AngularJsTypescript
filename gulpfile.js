@@ -45,3 +45,5 @@ gulp.task('tscompile', function () {
 	return tsResult.js
 	.pipe(gulp.dest(paths.app));	
 });
+
+gulp.task('startup', ['libs', 'assets', 'tscompile']);
