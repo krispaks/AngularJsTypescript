@@ -7,9 +7,9 @@ angularjs typescript testing
   * typings
   * gulp
   * live-server
-* run npm install - populate node_modules folder
-* run bower install - populate bower_components folder 
-* run typings install - populate typings folder
-* run gulp startup - transfers all needed files from bower_component and node_modules to assets and lib folders respectively
+* run AngularJsTypescript>npm install - populate node_modules folder
+* run AngularJsTypescript>bower install - populate bower_components folder 
+* run AngularJsTypescript>typings install - populate typings folder
+* run AngularJsTypescript>gulp startup - transfers files from bower_component and node_modules to assets and lib folders respectively
 * go to folder AngularJsTypescript/wwwroot
-* run live-server - this should automatically load up the index.html file
+* "run" wwwroot> live-server - this should automatically load up the index.html file
