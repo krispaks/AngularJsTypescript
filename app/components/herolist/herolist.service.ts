@@ -8,7 +8,7 @@ export class HeroListService implements IHeroListService {
         this.http = $http;
     }
     
-    GetHeroes() {
+    GetHeroes() : Array<IHeroDetail> {
         let heroes: Array<IHeroDetail> = [new Hero('superman', 'flying', 1000)
                         , new Hero('batman', 'nothing', 10)
                         , new Hero('magneto', 'bully', 500)];   ;
