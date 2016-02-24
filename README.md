@@ -1,5 +1,11 @@
 # AngularJsTypescript
-angularjs typescript testing
+Typescript Implementation of AngularJS 1.5
+
+* Loading by SystemJS
+* AngularJS 1.5 Components
+* Component Routing
+
+----------- SETUP ------------------
 
 * open command line pointed to the folder directory AngularJsTypescript
 * make sure the following are installed globally
