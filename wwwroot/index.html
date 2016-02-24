@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">    
     <head>
+        <base href="/">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -26,9 +27,15 @@
         </script>       
     </head>
     <body  ng-app="AppModule" ng-cloak>
-        <div ng-controller="AppModuleCtrl as vm"> 
-            Team: {{vm.name}}
-            <hero-list></hero-list>    
+        <div ng-controller="AppModuleCtrl as vm" layout="column">
+            <md-content class="md-padding">              
+                <md-tabs>
+                    <md-tab><a href="/HeroList">HeroList</a></md-tab> 
+                    <md-tab><a href="/HeroDetail">HeroDetail</a></md-tab>
+                    <md-tab>Component Testing2</md-tab>
+                </md-tabs>
+                <div ng-view></div>
+            </md-content>
         </div>                        
     </body>   
 </html>
