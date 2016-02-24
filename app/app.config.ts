@@ -14,13 +14,13 @@ class HeroDetailRoute implements ng.route.IRoute {
         let route = this;
         this.template = '<hero-detail hero="$resolve.hero"></hero-detail>';
         this.resolve = {
-                        hero: function () {
-                            return {
-                                name: 'Captain Barbel',
-                                ability: 'Like Superman',
-                                strength: 1000    
-                            };
-                        }
+            hero: function () {
+                return {
+                    name: 'Captain Barbel',
+                    ability: 'Like Superman',
+                    strength: 1000    
+                };
+            }
         }
     }
 }
