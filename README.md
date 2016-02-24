@@ -4,6 +4,7 @@ Typescript Implementation of AngularJS 1.5
 * Loading by SystemJS
 * AngularJS 1.5 Components
 * Component Routing
+* Basic Angular Material
 
 ----------- SETUP ------------------
 
