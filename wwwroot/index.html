@@ -22,15 +22,10 @@
         </script>
         <script>
             System.import('app/app.module').catch(console.log.bind(console));
-        </script>
-        <style type="text/css">
-            [ng\:cloak]{
-                display: none !important;
-            }
-        </style>        
+        </script>       
     </head>
-    <body  ng-app="testing">
-        <div ng-controller="todoCtrl as vm" ng-cloak> 
+    <body  ng-app="AppModule" ng-cloak>
+        <div ng-controller="AppModuleCtrl as vm"> 
             Team: {{vm.name}}
             <hero-list></hero-list>    
         </div>                        
