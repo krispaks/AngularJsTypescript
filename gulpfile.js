@@ -14,6 +14,7 @@ var tsProject = ts.createProject(paths.tsRoot + 'tsconfig.json');
 
 var libs = [
     paths.bower + 'angular/angular.js',
+    paths.bower + 'angular-route/angular-route.js',
     paths.bower + 'angular-animate/angular-animate.js',
     paths.bower + 'angular-aria/angular-aria.js',
     paths.bower + 'angular-material/angular-material.js',

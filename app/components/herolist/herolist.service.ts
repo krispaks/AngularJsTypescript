@@ -1,11 +1,12 @@
+'use strict';
+
 import { IHeroListService, Hero } from './herolist.model';
 import { IHeroDetail } from '../herodetail/herodetail.model';
 
 export class HeroListService implements IHeroListService {
-    http: ng.IHttpService;
+    static $inject = ['$http'];
     
-    constructor($http: ng.IHttpService){
-        this.http = $http;
+    constructor($http: ng.IHttpService){        
     }
     
     GetHeroes() : Array<IHeroDetail> {
