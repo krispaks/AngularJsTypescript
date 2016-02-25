@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./assets/jasmine.css"        
+        <script type="text/javascript" src="./lib/system.js"></script>
+        <script>
+            System.config({
+               defaultJSExtensions: true,
+               baseUrl: '/app',
+               map:{
+                   'jasmine': '/lib/jasmine',
+                   'jasmine-html': '/lib/jasmine-html'
+               }
+            });
+            System.import('app/app.test').catch(console.log.bind(console));
+        </script>
+    </head>
+</html>

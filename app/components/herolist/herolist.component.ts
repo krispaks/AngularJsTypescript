@@ -4,9 +4,8 @@ import {IHeroListCtrl, IHeroListService} from './herolist.model';
 import {IHeroDetail} from '../herodetail/herodetail.model';
 
 class HeroListCtrl implements IHeroListCtrl {
-    
-    // this should call a service    
-    public heroList: Array<IHeroDetail> = [];
+           
+    heroList: Array<IHeroDetail> = [];
     static $inject = ['heroListService'];
     
     constructor(private heroListService: IHeroListService ){
@@ -17,9 +16,9 @@ class HeroListCtrl implements IHeroListCtrl {
 }
 
 export class HeroListComponent implements ng.IComponentOptions {
-    public templateUrl: string;
-    public controller: any;
-    public transclude: boolean;
+    templateUrl: string;
+    controller: any;
+    transclude: boolean;
     constructor(){
         let component = this;
         component.templateUrl = '../templates/herolist/herolist.template.html';

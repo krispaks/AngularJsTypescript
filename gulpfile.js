@@ -21,11 +21,14 @@ var libs = [
     paths.bower + 'angular-messages/angular-messages.js',
     paths.npm + 'systemjs/dist/system.js',
     paths.npm + 'systemjs/dist/system-polyfills.js',
+    paths.npm + 'jasmine-core/lib/jasmine.js',
+    paths.npm + 'jasmine-core/lib/jasmine-html.js'
 ];
 
 var assets = [
     paths.bower + 'angular-material/angular-material.min.css',
-    paths.bower + 'angular-material/angular-material.layouts.min.css'    
+    paths.bower + 'angular-material/angular-material.layouts.min.css',
+    paths.npm + 'jasmine-core/lib/jasmine-core/jasmine.css'    
 ];
 
 gulp.task('libs', function () {
