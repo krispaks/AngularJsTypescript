@@ -8,6 +8,10 @@ Typescript Implementation of AngularJS 1.5
 * Jasmine Html testing integration
 * VS Code
 
+----------- TODO -------------------
+* integrate with Protractor
+* integrate Protractor and Gulp
+
 ----------- SETUP ------------------
 
 * open command line pointed to the folder directory AngularJsTypescript
