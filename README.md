@@ -5,6 +5,7 @@ Typescript Implementation of AngularJS 1.5
 * AngularJS 1.5 Components
 * Component Routing
 * Basic Angular Material
+* VS Code
 
 ----------- SETUP ------------------
 
