@@ -5,6 +5,7 @@ Typescript Implementation of AngularJS 1.5
 * AngularJS 1.5 Components
 * Component Routing
 * Basic Angular Material
+* Jasmine Html testing integration
 * VS Code
 
 ----------- SETUP ------------------
@@ -21,3 +22,4 @@ Typescript Implementation of AngularJS 1.5
 * "run" AngularJsTypescript>gulp startup - transfers files from bower_component and node_modules to assets and lib folders respectively
 * go to folder AngularJsTypescript\wwwroot
 * "run" AngularJsTypescript\wwwroot>live-server - this should automatically load up the index.html file
+* to open jasmine testing html page - browse to index-test.html
