@@ -63,4 +63,4 @@ gulp.task('tsSpecCompile', function () {
 });
 
 
-gulp.task('startup', ['libs', 'assets', 'tscompile']);
+gulp.task('startup', ['libs', 'assets', 'tsAppCompile', 'tsSpecCompile']);
