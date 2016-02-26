@@ -6,10 +6,10 @@ Typescript Implementation of AngularJS 1.5
 * Component Routing
 * Basic Angular Material
 * Jasmine Html testing integration
+* Protractor integration
 * VS Code
 
 ----------- TODO -------------------
-* integrate with Protractor
 * integrate Protractor and Gulp
 
 ----------- SETUP ------------------
