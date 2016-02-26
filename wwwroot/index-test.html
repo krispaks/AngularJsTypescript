@@ -9,11 +9,11 @@
         <script>
             System.config({
                defaultJSExtensions: true,
-               baseUrl: '/app',
+               baseUrl: '/e2e',
                map:{
                }
             });
-            System.import('app/app.spec')
+            System.import('e2e/app.spec')
                 .then(window.onload)
                 .catch(console.log.bind(console));
         </script>

@@ -6,11 +6,14 @@ var paths = {
     bower: './bower_components/',
 	lib: './wwwroot/lib/',
 	app: './wwwroot/app/',
-	tsRoot: './app/',
+    e2e: './wwwroot/e2e/',
+	tsAppRoot: './app/',
+    tsSpecRoot: './e2e/',
     assets: './wwwroot/assets/'
 };
 
-var tsProject = ts.createProject(paths.tsRoot + 'tsconfig.json');
+var tsAppProject = ts.createProject(paths.tsAppRoot + 'tsconfig.json');
+var tsSpecProject = ts.createProject(paths.tsSpecRoot + 'tsconfig.json');
 
 var libs = [
     paths.bower + 'angular/angular.js',
@@ -43,12 +46,21 @@ gulp.task('assets', function(){
 })
 
 // tscompile
-gulp.task('tscompile', function () {	
-    var tsResult = tsProject.src()
-    .pipe(ts(tsProject));
+gulp.task('tsAppCompile', function () {	
+    var tsResult = tsAppProject.src()
+    .pipe(ts(tsAppProject));
 
 	return tsResult.js
 	.pipe(gulp.dest(paths.app));	
 });
+
+gulp.task('tsSpecCompile', function () {	
+    var tsResult = tsSpecProject.src()
+    .pipe(ts(tsSpecProject));
+
+	return tsResult.js
+	.pipe(gulp.dest(paths.e2e));	
+});
+
 
 gulp.task('startup', ['libs', 'assets', 'tscompile']);

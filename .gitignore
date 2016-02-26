@@ -5,6 +5,10 @@ typings/*
 wwwroot/app/*
 wwwroot/lib/*
 wwwroot/assets/*
+wwwroot/e2e/*
 
 .vscode
 .vscode/*
+
+app/typings/*
+e2e/typings/*
