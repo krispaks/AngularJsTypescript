@@ -1,6 +1,6 @@
 'use strict';
 
-//import { HeroListService } from '../../../app/components/herolist/herolist.service';
+import { HeroListService } from './herolist.service';
 
 describe('HeroList Component', () => {
     it('Test HeroList', () => {
