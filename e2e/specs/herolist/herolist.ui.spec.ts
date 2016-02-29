@@ -1,19 +1,13 @@
 'use strict';
 
 describe('hero list test', () => {
-   it('should add a todo', function() {
-    browser.get('https://angularjs.org');
+   it('Hero List', function() {
+    browser.get('http://127.0.0.1:8080/HeroList');
 
-    element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-    element(by.css('[value="add"]')).click();
-
-    var todoList = element.all(by.repeater('todo in todoList.todos'));
-    expect(todoList.count()).toEqual(3);
-    expect(todoList.get(2).getText()).toEqual('write first protractor test');
+    var herolist = element.all(by.repeater('character in $ctrl.heroList'));
+    expect(herolist.count()).toEqual(3);
 
     // You wrote your first test, cross it off the list
-    todoList.get(2).element(by.css('input')).click();
-    var completedAmount = element.all(by.css('.done-true'));
-    expect(completedAmount.count()).toEqual(2);
+    herolist.get(2).element(by.css('md-fab')).click();
   });
 });
