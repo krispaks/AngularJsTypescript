@@ -1,19 +1,72 @@
-'use strict';
+module app.components.herolist {
+    //each component will have a class like this for cleaning up html and create behaviours  
+    export class HeroDetailComponent {
+        allMDElementTags =  element.all(by.tagName('md-tabs'));
+        heroDetailRef = element(by.css('a[href*="/HeroDetail"]'));
 
-describe('hero detail test', () => {
-   it('should add a todo', function() {
-    browser.get('https://angularjs.org');
+        visit() {
+            browser.get('http://127.0.0.1:8080');
+            return this;
+        }
+        
+        isRendered() {
+            return this.heroDetailRef.isPresent();
+        }
+        
+        getHeroDetail() {
+            this.heroDetailRef.click(); 
+            return this;
+        }
+         getBaseCorrectUrl() {
+            return '/';
+        }   
+        getCorrectHeroUrl() {
+            return this.getBaseCorrectUrl()+'HeroDetail';
+        }
+    }
 
-    element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-    element(by.css('[value="add"]')).click();
+    //the tests themselves
+    describe('the hero list component', function () {
+        var feature;
 
-    var todoList = element.all(by.repeater('todo in todoList.todos'));
-    expect(todoList.count()).toEqual(3);
-    expect(todoList.get(2).getText()).toEqual('write first protractor test');
+        beforeEach(function () {
+            feature = new HeroDetailComponent();
+            feature.visit();
+        });
 
-    // You wrote your first test, cross it off the list
-    todoList.get(2).element(by.css('input')).click();
-    var completedAmount = element.all(by.css('.done-true'));
-    expect(completedAmount.count()).toEqual(2);
-  });
-});
+        it('should render homepage as default', function () {
+            expect(browser.getLocationAbsUrl()).toBe(feature.getBaseCorrectUrl());
+        });
+
+        it('should render the correct contents for homepage', function () {
+            expect(feature.isRendered()).toBe(true);
+        });
+        
+        it('should navigate to the correct url for the hero list', function () {
+            feature.getHeroDetail();
+            expect(browser.getLocationAbsUrl()).toBe(feature.getCorrectHeroUrl());
+        });
+          
+        it('the first strength of the list should be 1000', function () {
+            feature.getHeroDetail();
+            element(by.binding('$ctrl.hero.name')).getText().then(function(name) {
+            expect(name).toBe('Name: Captain Barbel');
+            });            
+        }); 
+        
+        it('the first strength of the list should be 1000', function () {
+            feature.getHeroDetail();
+            element(by.binding('$ctrl.hero.ability')).getText().then(function(ability) {
+            expect(ability).toBe('Ability: Like Superman');
+            });            
+        });     
+                      
+        it('the first strength of the list should be 1000', function () {
+            feature.getHeroDetail();
+            element(by.binding('$ctrl.hero.strength')).getText().then(function(strength) {
+            expect(strength).toBe('Strength: 1000');
+            });            
+        });                    
+        
+        });
+}
