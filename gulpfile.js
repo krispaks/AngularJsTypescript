@@ -1,8 +1,5 @@
-/* global e2e */
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
-var watch = require('gulp-watch');
-  
 
 var paths = {
 	npm: './node_modules/',
@@ -59,13 +56,11 @@ gulp.task('tsAppCompile', function () {
 
 gulp.task('tsSpecCompile', function () {	
     var tsResult = tsSpecProject.src()
-    .pipe(ts(tsSpecProject))
+    .pipe(ts(tsSpecProject));
+
 	return tsResult.js
 	.pipe(gulp.dest(paths.e2e));	
 });
-gulp.task('watch', function () {	
-    gulp.watch('./e2e/specs/**/*.ts', ['tsSpecCompile']);
-});
 
 
-gulp.task('startup', ['libs', 'assets', 'tsAppCompile', 'tsSpecCompile', 'watch']);
+gulp.task('startup', ['libs', 'assets', 'tsAppCompile', 'tsSpecCompile']);

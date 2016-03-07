@@ -6,6 +6,9 @@ import 'angular-route';
 import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
+// showing how to load component the other way. - just testing
+import './components/herohobby/herohobby.component';
+
 
 import { AppModuleCtrl } from './app.controller';
 import { AppConfig } from './app.config';
@@ -18,4 +21,6 @@ angular.module('AppModule', ['ngMaterial', 'ngRoute'])
         .factory('heroListService', ['$http', ($http) => new HeroListService($http)])
         .component('heroList', new HeroListComponent())
         .component('heroDetail', new HeroDetailComponent())
-        .config(AppConfig);      
+        .config(AppConfig);
+        
+      
