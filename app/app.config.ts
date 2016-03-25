@@ -28,14 +28,18 @@ class HeroDetailRoute implements ng.route.IRoute {
 export class AppConfig{
     'use strict';
     
-    static $inject = ['$routeProvider', '$locationProvider'];
+    static $inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
     
-    constructor($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider){
+    constructor($routeProvider: ng.route.IRouteProvider
+        ,$locationProvider: ng.ILocationProvider
+        ,$httProvider: ng.IHttpProvider){
+            
         $routeProvider
         .when('/HeroList', new HeroListRoute())
         .when('/HeroDetail', new HeroDetailRoute());
         
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
+        $httProvider.interceptors.push('heroInterceptor');
     }
 }

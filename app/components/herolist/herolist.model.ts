@@ -9,5 +9,5 @@ export interface IHeroListCtrl {
 }
 
 export interface IHeroListService {
-    GetHeroes() : Array<IHeroDetail>;
+    GetHeroes() : ng.IPromise<ng.resource.IResourceArray<ng.resource.IResource<any>>>;
 }

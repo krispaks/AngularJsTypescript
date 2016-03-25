@@ -3,6 +3,7 @@
   "name": "AngularJsTypescript",
   "private": true,
   "dependencies": {
+    "gulp-watch": "^4.3.5",
     "systemjs": "0.19.6"
   },
   "devDependencies": {

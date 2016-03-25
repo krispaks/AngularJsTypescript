@@ -6,12 +6,17 @@ import {IHeroDetail} from '../herodetail/herodetail.model';
 class HeroListCtrl implements IHeroListCtrl {
            
     heroList: Array<IHeroDetail> = [];
+    repos: any = {};
     static $inject = ['heroListService'];
     
     constructor(private heroListService: IHeroListService ){
         let ctrl = this;  
         
-        ctrl.heroList = heroListService.GetHeroes();
+        ctrl.repos = heroListService.GetHeroes().then((response: any)=>{
+            alert(response);
+        }).catch((response: any)=>{
+            alert(response);
+        });
     }
 }
 

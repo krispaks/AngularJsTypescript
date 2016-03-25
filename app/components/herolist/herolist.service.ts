@@ -4,15 +4,22 @@ import { IHeroListService, Hero } from './herolist.model';
 import { IHeroDetail } from '../herodetail/herodetail.model';
 
 export class HeroListService implements IHeroListService {
-    static $inject = ['$http'];
+    static $inject = ['$resource'];
     
-    constructor($http: ng.IHttpService){        
+    constructor(private $resource: ng.resource.IResourceService){        
     }
     
-    GetHeroes() : Array<IHeroDetail> {
-        let heroes: Array<IHeroDetail> = [new Hero('superman', 'flying', 1000)
-                        , new Hero('batman', 'nothing', 10)
-                        , new Hero('magneto', 'bully', 500)];   ;
-        return heroes;
+    GetHeroes() : ng.IPromise<ng.resource.IResourceArray<ng.resource.IResource<any>>> {
+        let ctrl = this;
+        let req = ctrl.$resource('https://api.github.com/users/krispaks/repos', {
+            'query': {
+                method: 'GET',
+                isArray: false
+            }
+        });
+        
+        let res = req.query({}).$promise;
+        
+        return res;
     }
 }

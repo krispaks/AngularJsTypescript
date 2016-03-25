@@ -25,6 +25,7 @@ var libs = [
     paths.bower + 'angular-aria/angular-aria.js',
     paths.bower + 'angular-material/angular-material.js',
     paths.bower + 'angular-messages/angular-messages.js',
+    paths.bower + 'angular-resource/angular-resource.js',
     paths.npm + 'systemjs/dist/system.js',
     paths.npm + 'systemjs/dist/system-polyfills.js',
     paths.npm + 'jasmine-core/lib/jasmine-core/jasmine.js',
@@ -63,8 +64,13 @@ gulp.task('tsSpecCompile', function () {
 	return tsResult.js
 	.pipe(gulp.dest(paths.e2e));	
 });
-gulp.task('watch', function () {	
+
+gulp.task('watchSpec', function () {	
     gulp.watch('./e2e/specs/**/*.ts', ['tsSpecCompile']);
+});
+
+gulp.task('watchApp', function () {	
+    gulp.watch(paths.tsAppRoot+'/**/*.ts', ['tsAppCompile']);
 });
 
 

@@ -3,6 +3,7 @@
 
 import 'angular';
 import 'angular-route';
+import 'angular-resource';
 import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
@@ -13,9 +14,19 @@ import { HeroDetailComponent } from './components/herodetail/herodetail.componen
 import { HeroListComponent } from './components/herolist/herolist.component'; 
 import { HeroListService } from './components/herolist/herolist.service';
 
-angular.module('AppModule', ['ngMaterial', 'ngRoute'])
+angular.module('AppModule', ['ngMaterial', 'ngRoute', 'ngResource'])
         .controller('AppModuleCtrl', AppModuleCtrl)
-        .factory('heroListService', ['$http', ($http) => new HeroListService($http)])
+        .factory('heroListService', ['$resource', ($resource) => new HeroListService($resource)])
+        .service('heroInterceptor', ['$q', function($q){
+            var heroInterceptor = {
+                response: function(config){
+                    let deferred = $q.defer();
+                    return deferred.promise;
+                }
+            };
+            
+            return heroInterceptor;
+        }])
         .component('heroList', new HeroListComponent())
         .component('heroDetail', new HeroDetailComponent())
         .config(AppConfig);      
