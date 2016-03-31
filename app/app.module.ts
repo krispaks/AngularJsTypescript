@@ -20,11 +20,9 @@ angular.module('AppModule', ['ngMaterial', 'ngRoute', 'ngResource'])
         .service('heroInterceptor', ['$q', function($q){
             var heroInterceptor = {
                 response: function(config){
-                    let deferred = $q.defer();
-                    return deferred.promise;
+                    return config;              
                 }
-            };
-            
+            };            
             return heroInterceptor;
         }])
         .component('heroList', new HeroListComponent())

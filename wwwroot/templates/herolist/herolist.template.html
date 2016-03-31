@@ -1,3 +1,9 @@
 <div>
-    <hero-detail ng-repeat="character in $ctrl.heroList" hero="character"></hero-detail>          
+    <hero-detail ng-repeat="character in $ctrl.heroList" hero="character" make-current="$ctrl.selectCurrent(hero)"></hero-detail>          
 </div>
+<br>
+<div>
+    <p>Current Hero</p>
+    <hero-detail hero="$ctrl.currentHero"></hero-detail>
+</div>
+    

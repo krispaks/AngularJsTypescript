@@ -4,7 +4,13 @@ import { IHeroDetail, IHeroDetailCtrl } from './herodetail.model';
 
 class HeroDetailCtrl implements IHeroDetailCtrl {
     hero: IHeroDetail;
+    makeCurrent: Function;
     constructor(){        
+    }
+    
+    private selectHero(){
+        let ctrl = this;
+        ctrl.makeCurrent({hero: ctrl.hero});
     }
 }
 
@@ -20,7 +26,8 @@ export class HeroDetailComponent implements ng.IComponentOptions {
         component.controller = HeroDetailCtrl;
         component.transclude = true;
         component.bindings = {
-            hero: '<'
+            hero: '<',
+            makeCurrent: '&'
         }
     }
 }
