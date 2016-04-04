@@ -1,6 +1,7 @@
 /* global e2e */
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
+var tsLint = require('gulp-tslint');
 var watch = require('gulp-watch');
   
 
@@ -39,37 +40,43 @@ var assets = [
     paths.npm + 'jasmine-core/lib/jasmine-core/jasmine.css'    
 ];
 
-gulp.task('libs', function () {
+gulp.task('libs', () => {
 	return gulp.src(libs)
 	.pipe(gulp.dest(paths.lib));
 });
 
-gulp.task('assets', function(){
+gulp.task('assets', () => {
     return gulp.src(assets)
     .pipe(gulp.dest(paths.assets));
 })
 
 // tscompile
-gulp.task('tsAppCompile', function () {	
+gulp.task('tsAppCompile', () => {	
     var tsResult = tsAppProject.src()
     .pipe(ts(tsAppProject));
-
 	return tsResult.js
 	.pipe(gulp.dest(paths.app));	
 });
 
-gulp.task('tsSpecCompile', function () {	
+gulp.task('tsSpecCompile', () => {	
     var tsResult = tsSpecProject.src()
     .pipe(ts(tsSpecProject))
 	return tsResult.js
 	.pipe(gulp.dest(paths.e2e));	
 });
 
-gulp.task('watchSpec', function () {	
+// tslint
+gulp.task('tsAppLint', () => {
+    return gulp.src(paths.tsAppRoot+'/**/*.ts')
+    .pipe(tsLint())
+    .pipe(tsLint.report('verbose'));
+});
+
+gulp.task('watchSpec', () => {	
     gulp.watch('./e2e/specs/**/*.ts', ['tsSpecCompile']);
 });
 
-gulp.task('watchApp', function () {	
+gulp.task('watchApp', () => {	
     gulp.watch(paths.tsAppRoot+'/**/*.ts', ['tsAppCompile']);
 });
 

@@ -3,8 +3,10 @@
   "name": "AngularJsTypescript",
   "private": true,
   "dependencies": {
+    "gulp-tslint": "^4.3.4",
     "gulp-watch": "^4.3.5",
-    "systemjs": "0.19.6"
+    "systemjs": "0.19.6",
+    "tslint": "^3.6.0"
   },
   "devDependencies": {
     "gulp": "3.9.1",
