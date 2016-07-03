@@ -8,20 +8,9 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="./assets/angular-material.min.css">
         <link rel="stylesheet" type="text/css" href="./assets/angular-material.layouts.min.css">
-        <script src="./lib/system.js"></script>        
+        <script src="./lib/system.js"></script>
+        <script src="./app/system.conf.js"></script>        
         <script>
-            System.config({
-                defaultJSExtensions: true,
-                baseUrl: '/app',
-                map: {
-                    'angular': '/lib/angular',
-                    'angular-route': '/lib/angular-route',
-                    'angular-animate': '/lib/angular-animate',
-                    'angular-aria': '/lib/angular-aria',
-                    'angular-material': '/lib/angular-material',
-                    'angular-resource': '/lib/angular-resource'
-                }
-            });
             System.import('app/app.module').catch(console.log.bind(console));
         </script>
     </head>
