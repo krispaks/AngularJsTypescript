@@ -1,24 +1,14 @@
 'use strict';
 
+import 'angular';
+
 describe('HeroDetail', () => {
-    it('Test HeroDetail', () => {
-        expect(true).toEqual(true);
-    });
-    
-    it('Test HeroDetail', () => {
-        expect(false).toEqual(true);
-    });
-    
-    it('Test HeroDetail', () => {
-        expect(true).toEqual(true);
-    });
-    
-    it('Test HeroDetail', () => {
-        expect(false).toEqual(true);
-    });
-    
-    it('Test HeroDetail', () => {
-        expect(true).toEqual(true);
-    });
+    var component, scope, hero, $componentController;
+
+    beforeEach(angular.mock.module('AppModule'));
+
+    it('test that hero.name will be DODO', function() {
+        
+    })
 })
 

@@ -2,7 +2,9 @@ module.exports = function(config) {
     config.set({
         basePath: './',
         frameworks: ['systemjs', 'jasmine'],
-        files: [],
+        files: [
+            './wwwroot/app/**/*/*.spec.js'
+        ],
         browsers: ['Chrome'],
         plugins: [
             'karma-jasmine',
