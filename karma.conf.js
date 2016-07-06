@@ -1,9 +1,9 @@
 module.exports = function(config) {
     config.set({
-        basePath: './',
+        basePath: '',
         frameworks: ['systemjs', 'jasmine'],
         files: [
-            './wwwroot/app/**/*/*.spec.js'
+            'wwwroot/app/**/*/*.spec.js'
         ],
         browsers: ['Chrome'],
         plugins: [
@@ -15,14 +15,17 @@ module.exports = function(config) {
             'progress'
         ],
         colors: true,
-        systemj: {
-            configFile: './system.conf.js',
+        systemjs: {
+            configFile: 'wwwroot/app/system.conf.js',
             serveFiles: [],
             config: {
                 paths: {
-
+                    'systemjs': 'wwwroot/lib/system.js',
+                    'angular-mocks' : 'wwwroot/lib/angular-mocks.js',
+                    'traceur' : 'wwwroot/lib/traceur.js'
                 }
-            }
+            },
+            //transpiler: 'plugin-typescript'
         }
     });
 };

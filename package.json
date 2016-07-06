@@ -2,11 +2,8 @@
   "version": "1.0.0",
   "name": "AngularJsTypescript",
   "private": true,
-  "dependencies": {
-    "gulp-tslint": "^4.3.4",
-    "gulp-watch": "^4.3.5",
-    "systemjs": "0.19.6",
-    "tslint": "^3.6.0"
+  "dependencies": {    
+    "systemjs": "0.19.6"
   },
   "devDependencies": {
     "gulp": "3.9.1",
@@ -16,9 +13,14 @@
     "karma": "^1.1.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
-    "karma-systemjs": "^0.14.0"
+    "karma-systemjs": "^0.14.0",
+    "traceur": "0.0.111",
+    "plugin-typescript": "^4.0.17",
+    "gulp-tslint": "^4.3.4",
+    "gulp-watch": "^4.3.5",
+    "tslint": "^3.6.0"
   },
   "scripts": {
-    "test" : "karma start karma.conf.js"
+    "test": "karma start karma.conf.js"
   }
 }
