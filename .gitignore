@@ -10,5 +10,4 @@ wwwroot/e2e/*
 .vscode
 .vscode/*
 
-app/typings/*
 e2e/typings/*
