@@ -1,6 +1,7 @@
 'use strict';
 
 import 'angular';
+import 'angular-mocks';
 
 describe('HeroDetail', () => {
     var component, scope, hero, $componentController;

@@ -21,6 +21,7 @@
     "tslint": "^3.6.0"
   },
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "compile": "gulp compile"
   }
 }

@@ -1,9 +1,10 @@
 module.exports = function(config) {
     config.set({
-        basePath: '',
+        basePath: './',
         frameworks: ['systemjs', 'jasmine'],
         files: [
-            'wwwroot/app/**/*/*.spec.js'
+            'wwwroot/app/app.*.js',
+            'wwwroot/app/**/*/*.js'
         ],
         browsers: ['Chrome'],
         plugins: [
@@ -17,15 +18,22 @@ module.exports = function(config) {
         colors: true,
         systemjs: {
             configFile: 'wwwroot/app/system.conf.js',
-            serveFiles: [],
+            serveFiles: [
+                'wwwroot/lib/angular.js',
+                'wwwroot/lib/angular-animate.js',
+                'wwwroot/lib/angular-aria.js',
+                'wwwroot/lib/angular-material.js',
+                'wwwroot/lib/angular-messages.js',
+                'wwwroot/lib/angular-mocks.js',
+                'wwwroot/lib/angular-resource.js',
+                'wwwroot/lib/angular-route.js'
+            ],
             config: {
                 paths: {
                     'systemjs': 'wwwroot/lib/system.js',
-                    'angular-mocks' : 'wwwroot/lib/angular-mocks.js',
-                    'traceur' : 'wwwroot/lib/traceur.js'
+                    'system-polyfills' : 'wwwroot/lib/system-polyfills.js'
                 }
-            },
-            //transpiler: 'plugin-typescript'
+            }
         }
     });
 };

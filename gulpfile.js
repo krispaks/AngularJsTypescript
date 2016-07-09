@@ -82,3 +82,5 @@ gulp.task('watchApp', () => {
 
 
 gulp.task('startup', ['libs', 'assets', 'tsAppCompile', 'tsSpecCompile', 'watch']);
+
+gulp.task('compile', ['tsAppCompile', 'tsSpecCompile']);

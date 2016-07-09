@@ -1,6 +1,6 @@
 'use strict';
 
-import { HeroListService } from './herolist.service';
+/*import { HeroListService } from './herolist.service';
 
 describe('HeroList Component', () => {
     it('Test HeroList', () => {
@@ -29,5 +29,5 @@ describe('HeroList Service', () => {
     it('Test HeroList Service 2', () => {
         expect(true).toEqual(true);
     });
-})
+})*/
 
