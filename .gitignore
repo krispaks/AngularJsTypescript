@@ -2,11 +2,6 @@ node_modules/*
 bower_components/*
 typings/*
 
-wwwroot/app/*
-wwwroot/lib/*
-wwwroot/assets/*
-wwwroot/e2e/*
-
 .vscode
 .vscode/*
 
