@@ -2,14 +2,20 @@
 
 import 'angular';
 import 'angular-mocks';
+import { AppModule } from '../../app.module';
 
 describe('HeroDetail', () => {
-    var component, scope, hero, $componentController;
-
+    var httpBackend, $componentController;
+    new AppModule();
     beforeEach(angular.mock.module('AppModule'));
 
-    it('test that hero.name will be DODO', function() {
-        
-    })
+    beforeEach(inject(($httpBackend, _$componentController_)=>{
+        httpBackend = $httpBackend;
+        $componentController = _$componentController_;
+    }));
+
+    it('test', ()=>{
+        expect(true).toBe(true);
+    });
 })
 

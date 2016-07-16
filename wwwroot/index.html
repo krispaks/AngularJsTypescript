@@ -8,10 +8,12 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="./assets/angular-material.min.css">
         <link rel="stylesheet" type="text/css" href="./assets/angular-material.layouts.min.css">
-        <script src="./lib/system.js"></script>
-        <script src="./app/system.conf.js"></script>        
+        <script src="lib/system.js"></script>
+        <script src="system.conf.js"></script>        
         <script>
-            System.import('app/app.module').catch(console.log.bind(console));
+            System.import('app/app.module').then((data)=>{
+                data.AppModule();
+            }).catch(console.log.bind(console));
         </script>
     </head>
     <body  ng-app="AppModule" ng-cloak>

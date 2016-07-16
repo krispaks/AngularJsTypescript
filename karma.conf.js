@@ -17,7 +17,7 @@ module.exports = function(config) {
         ],
         colors: true,
         systemjs: {
-            configFile: 'wwwroot/app/system.conf.js',
+            configFile: 'wwwroot/app/system.spec.conf.js',
             serveFiles: [
                 'wwwroot/lib/angular.js',
                 'wwwroot/lib/angular-animate.js',

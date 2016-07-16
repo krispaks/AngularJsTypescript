@@ -1,9 +1,15 @@
-define(["require", "exports", 'angular', 'angular-mocks'], function (require, exports) {
+define(["require", "exports", '../../app.module', 'angular', 'angular-mocks'], function (require, exports, app_module_1) {
     'use strict';
     describe('HeroDetail', function () {
-        var component, scope, hero, $componentController;
+        var httpBackend, $componentController;
+        new app_module_1.AppModule();
         beforeEach(angular.mock.module('AppModule'));
-        it('test that hero.name will be DODO', function () {
+        beforeEach(inject(function ($httpBackend, _$componentController_) {
+            httpBackend = $httpBackend;
+            $componentController = _$componentController_;
+        }));
+        it('test', function () {
+            expect(true).toBe(true);
         });
     });
 });

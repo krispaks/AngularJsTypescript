@@ -14,7 +14,9 @@ import { HeroDetailComponent } from './components/herodetail/herodetail.componen
 import { HeroListComponent } from './components/herolist/herolist.component'; 
 import { HeroListService } from './components/herolist/herolist.service';
 
-angular.module('AppModule', ['ngMaterial', 'ngRoute', 'ngResource'])
+export class AppModule{
+    constructor(){
+        angular.module('AppModule', ['ngMaterial', 'ngRoute', 'ngResource'])
         .controller('AppModuleCtrl', AppModuleCtrl)
         .factory('heroListService', ['$resource', ($resource) => new HeroListService($resource)])
         .service('heroInterceptor', ['$q', function($q){
@@ -28,3 +30,5 @@ angular.module('AppModule', ['ngMaterial', 'ngRoute', 'ngResource'])
         .component('heroList', new HeroListComponent())
         .component('heroDetail', new HeroDetailComponent())
         .config(AppConfig);      
+    }    
+}

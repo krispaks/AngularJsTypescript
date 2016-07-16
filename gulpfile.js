@@ -80,7 +80,8 @@ gulp.task('watchApp', () => {
     gulp.watch(paths.tsAppRoot+'/**/*.ts', ['tsAppCompile']);
 });
 
-
 gulp.task('startup', ['libs', 'assets', 'tsAppCompile', 'tsSpecCompile', 'watch']);
 
 gulp.task('compile', ['tsAppCompile', 'tsSpecCompile']);
+
+gulp.task('watchCompile', ['watchSpec', 'watchApp']);
