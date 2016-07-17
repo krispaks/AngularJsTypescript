@@ -6,3 +6,4 @@ typings/*
 .vscode/*
 
 e2e/typings/*
+*.log
