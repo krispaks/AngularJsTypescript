@@ -9,13 +9,9 @@ describe('HeroDetail', () => {
     new AppModule();
     beforeEach(angular.mock.module('AppModule'));
 
-    beforeEach(inject(($httpBackend, _$componentController_)=>{
+    beforeEach(inject(($httpBackend, _$componentController_, _heroListService_)=>{
         httpBackend = $httpBackend;
         $componentController = _$componentController_;
     }));
-
-    it('test', ()=>{
-        expect(true).toBe(true);
-    });
 })
 

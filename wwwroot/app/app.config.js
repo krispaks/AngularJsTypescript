@@ -30,7 +30,6 @@ define(["require", "exports"], function (require, exports) {
                 .when('/HeroDetail', new HeroDetailRoute());
             $locationProvider.html5Mode(true);
             $locationProvider.hashPrefix('!');
-            $httProvider.interceptors.push('heroInterceptor');
         }
         AppConfig.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
         return AppConfig;

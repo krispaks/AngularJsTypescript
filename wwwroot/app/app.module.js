@@ -5,14 +5,6 @@ define(["require", "exports", './app.controller', './app.config', './components/
             angular.module('AppModule', ['ngMaterial', 'ngRoute', 'ngResource'])
                 .controller('AppModuleCtrl', app_controller_1.AppModuleCtrl)
                 .factory('heroListService', ['$resource', function ($resource) { return new herolist_service_1.HeroListService($resource); }])
-                .service('heroInterceptor', ['$q', function ($q) {
-                    var heroInterceptor = {
-                        response: function (config) {
-                            return config;
-                        }
-                    };
-                    return heroInterceptor;
-                }])
                 .component('heroList', new herolist_component_1.HeroListComponent())
                 .component('heroDetail', new herodetail_component_1.HeroDetailComponent())
                 .config(app_config_1.AppConfig);

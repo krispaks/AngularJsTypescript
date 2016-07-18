@@ -5,15 +5,13 @@ define(["require", "exports"], function (require, exports) {
             this.$resource = $resource;
         }
         HeroListService.prototype.GetHeroes = function () {
-            var ctrl = this;
-            var req = ctrl.$resource('https://api.github.com/users/krispaks/repos', {
+            var req = this.$resource('https://api.github.com/users/krispaks/repos', {
                 'query': {
                     method: 'GET',
-                    isArray: false
+                    isArray: true
                 }
             });
-            var res = req.query({}).$promise;
-            return res;
+            return req.query({}).$promise;
         };
         HeroListService.$inject = ['$resource'];
         return HeroListService;

@@ -13,6 +13,11 @@ define(["require", "exports"], function (require, exports) {
             ctrl.heroList.push({ name: 'superman', ability: 'strength', strength: 1000 });
             ctrl.heroList.push({ name: 'batman', ability: 'intelligence', strength: 10 });
             ctrl.heroList.push({ name: 'flash', ability: 'speed', strength: 100 });
+            heroListService.GetHeroes()
+                .then(function (data) {
+            })
+                .catch(function (error) {
+            });
         }
         HeroListCtrl.$inject = ['heroListService'];
         return HeroListCtrl;

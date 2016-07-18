@@ -19,14 +19,14 @@ export class AppModule{
         angular.module('AppModule', ['ngMaterial', 'ngRoute', 'ngResource'])
         .controller('AppModuleCtrl', AppModuleCtrl)
         .factory('heroListService', ['$resource', ($resource) => new HeroListService($resource)])
-        .service('heroInterceptor', ['$q', function($q){
+        /*.service('heroInterceptor', ['$q', function($q){
             var heroInterceptor = {
                 response: function(config){
                     return config;              
                 }
             };            
             return heroInterceptor;
-        }])
+        }])*/
         .component('heroList', new HeroListComponent())
         .component('heroDetail', new HeroDetailComponent())
         .config(AppConfig);      

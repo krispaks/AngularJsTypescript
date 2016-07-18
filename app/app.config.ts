@@ -40,6 +40,6 @@ export class AppConfig{
         
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
-        $httProvider.interceptors.push('heroInterceptor');
+        //$httProvider.interceptors.push('heroInterceptor');
     }
 }

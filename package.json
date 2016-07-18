@@ -25,6 +25,7 @@
     "test": "karma start karma.conf.js",
     "compile": "gulp compile",
     "watch": "gulp watchCompile",
-    "dev": "karma start karma.conf.js | gulp watchCompile | lite-server"
+    "server": "lite-server",
+    "dev": "gulp watchCompile | karma start karma.conf.js"
   }
 }

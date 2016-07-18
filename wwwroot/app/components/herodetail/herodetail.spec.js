@@ -4,12 +4,9 @@ define(["require", "exports", '../../app.module', 'angular', 'angular-mocks'], f
         var httpBackend, $componentController;
         new app_module_1.AppModule();
         beforeEach(angular.mock.module('AppModule'));
-        beforeEach(inject(function ($httpBackend, _$componentController_) {
+        beforeEach(inject(function ($httpBackend, _$componentController_, _heroListService_) {
             httpBackend = $httpBackend;
             $componentController = _$componentController_;
         }));
-        it('test', function () {
-            expect(true).toBe(true);
-        });
     });
 });

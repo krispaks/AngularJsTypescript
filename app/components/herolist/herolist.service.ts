@@ -10,16 +10,13 @@ export class HeroListService implements IHeroListService {
     }
     
     GetHeroes() : ng.IPromise<ng.resource.IResourceArray<ng.resource.IResource<any>>> {
-        let ctrl = this;
-        let req = ctrl.$resource('https://api.github.com/users/krispaks/repos', {
+        let req = this.$resource('https://api.github.com/users/krispaks/repos', {
             'query': {
                 method: 'GET',
-                isArray: false
+                isArray: true
             }
         });
         
-        let res = req.query({}).$promise;
-        
-        return res;
+        return req.query({}).$promise;
     }
 }
