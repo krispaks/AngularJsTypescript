@@ -25,6 +25,22 @@ class HeroDetailRoute implements ng.route.IRoute {
     }
 }
 
+class HeroHobbyRoute implements ng.route.IRoute{
+    template: string;
+    resolve: any;
+    
+    constructor(){
+        this.template = '<hero-hobby hero="$resolve.hero"></hero-hobby>';
+        this.resolve = {
+            hero: function () {
+                return {
+                    heroId: 1
+                };
+            }
+        };
+    }
+}
+
 export class AppConfig{
     'use strict';
     
@@ -36,7 +52,8 @@ export class AppConfig{
             
         $routeProvider
         .when('/HeroList', new HeroListRoute())
-        .when('/HeroDetail', new HeroDetailRoute());
+        .when('/HeroDetail', new HeroDetailRoute())
+        .when('/HeroHobby/:heroId', new HeroHobbyRoute());
         
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');

@@ -11,7 +11,8 @@ import 'angular-material';
 import { AppModuleCtrl } from './app.controller';
 import { AppConfig } from './app.config';
 import { HeroDetailComponent } from './components/herodetail/herodetail.component';
-import { HeroListComponent } from './components/herolist/herolist.component'; 
+import { HeroListComponent } from './components/herolist/herolist.component';
+import { HeroHobbyComponent } from './components/herohobby/herohobby.component'; 
 import { HeroListService } from './components/herolist/herolist.service';
 
 export class AppModule{
@@ -29,6 +30,7 @@ export class AppModule{
         }])*/
         .component('heroList', new HeroListComponent())
         .component('heroDetail', new HeroDetailComponent())
+        .component('heroHobby', new HeroHobbyComponent())
         .config(AppConfig);      
     }    
 }

@@ -10,9 +10,9 @@ define(["require", "exports"], function (require, exports) {
                 ctrl.currentHero = currentHero;
             };
             var ctrl = this;
-            ctrl.heroList.push({ name: 'superman', ability: 'strength', strength: 1000 });
-            ctrl.heroList.push({ name: 'batman', ability: 'intelligence', strength: 10 });
-            ctrl.heroList.push({ name: 'flash', ability: 'speed', strength: 100 });
+            ctrl.heroList.push({ heroId: 1, name: 'superman', ability: 'strength', strength: 1000 });
+            ctrl.heroList.push({ heroId: 2, name: 'batman', ability: 'intelligence', strength: 10 });
+            ctrl.heroList.push({ heroId: 3, name: 'flash', ability: 'speed', strength: 100 });
             heroListService.GetHeroes()
                 .then(function (data) {
             })

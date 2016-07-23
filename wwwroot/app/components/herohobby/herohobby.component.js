@@ -1,23 +1,34 @@
-var app;
-(function (app) {
-    var herohobby;
-    (function (herohobby) {
-        var HeroHobbyCtrl = (function () {
-            function HeroHobbyCtrl() {
-            }
-            return HeroHobbyCtrl;
-        }());
-        var HeroHobby = (function () {
-            function HeroHobby() {
-                this.templateUrl = '';
-                this.controller = {};
-                this.bindins = {};
-                var component = this;
-                component.templateUrl = '';
-                component.controller = HeroHobbyCtrl;
-                component.transclude = true;
-            }
-            return HeroHobby;
-        }());
-    })(herohobby = app.herohobby || (app.herohobby = {}));
-})(app || (app = {}));
+define(["require", "exports", './herohobby.model'], function (require, exports, herohobby_model_1) {
+    "use strict";
+    var HeroHobbyCtrl = (function () {
+        function HeroHobbyCtrl() {
+            this.hobbyList = [];
+            this.initialize();
+        }
+        HeroHobbyCtrl.prototype.initialize = function () {
+            this.hobbyList.push(new herohobby_model_1.Hobby('basketball', 'dunks and hoops'));
+            this.hobbyList.push(new herohobby_model_1.Hobby('hiking', 'discover nature'));
+            this.hobbyList.push(new herohobby_model_1.Hobby('travelling', 'discover texas!!!'));
+        };
+        HeroHobbyCtrl.prototype.searchHobby = function (searchString) {
+            console.log(this.hero.heroId);
+        };
+        return HeroHobbyCtrl;
+    }());
+    var HeroHobbyComponent = (function () {
+        function HeroHobbyComponent() {
+            this.templateUrl = '';
+            this.controller = {};
+            this.bindings = {};
+            var component = this;
+            component.templateUrl = '../templates/herohobby/herohobby.template.html';
+            component.controller = HeroHobbyCtrl;
+            component.transclude = true;
+            component.bindings = {
+                hero: '<'
+            };
+        }
+        return HeroHobbyComponent;
+    }());
+    exports.HeroHobbyComponent = HeroHobbyComponent;
+});

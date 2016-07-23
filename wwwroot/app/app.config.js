@@ -23,11 +23,25 @@ define(["require", "exports"], function (require, exports) {
         }
         return HeroDetailRoute;
     }());
+    var HeroHobbyRoute = (function () {
+        function HeroHobbyRoute() {
+            this.template = '<hero-hobby hero="$resolve.hero"></hero-hobby>';
+            this.resolve = {
+                hero: function () {
+                    return {
+                        heroId: 1
+                    };
+                }
+            };
+        }
+        return HeroHobbyRoute;
+    }());
     var AppConfig = (function () {
         function AppConfig($routeProvider, $locationProvider, $httProvider) {
             $routeProvider
                 .when('/HeroList', new HeroListRoute())
-                .when('/HeroDetail', new HeroDetailRoute());
+                .when('/HeroDetail', new HeroDetailRoute())
+                .when('/HeroHobby/:heroId', new HeroHobbyRoute());
             $locationProvider.html5Mode(true);
             $locationProvider.hashPrefix('!');
         }

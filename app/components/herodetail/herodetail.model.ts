@@ -3,6 +3,7 @@ export interface IHeroDetailCtrl {
 }
 
 export interface IHeroDetail {
+    heroId: number;
     name: string;
     ability: string;
     strength: number;    
