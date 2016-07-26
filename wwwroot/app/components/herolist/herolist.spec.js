@@ -10,13 +10,28 @@ define(["require", "exports", '../../app.module', 'angular', 'angular-mocks'], f
             heroListService = _heroListService_;
         }));
         it('herolist service', function () {
+            httpBackend.whenGET('/api/Hero')
+                .respond({
+                data: [{
+                        heroId: 1,
+                        name: 'Superman',
+                        ability: 'strength',
+                        strength: 1000
+                    },
+                    {
+                        heroId: 2,
+                        name: 'Batman',
+                        ability: 'intelligence',
+                        strength: 100
+                    }]
+            });
             var promise = heroListService.GetHeroes();
             promise.then(function (data) {
-                expect(data).toBe(null);
-                expect(data).toBe(null);
+                expect(data.data.length).toBe(2);
             })
                 .catch(function (error) {
             });
+            httpBackend.flush();
         });
     });
 });

@@ -19,22 +19,32 @@ describe('HeroList', () => {
     }));
 
     it('herolist service', ()=>{
-        /*httpBackend.whenGET('https://api.github.com/users/krispaks/repos')
-        .respond([{
-            data: {
-                    name: 'khris',
-                    age: 32
-                }
-        }]);*/
+        httpBackend.whenGET('/api/Hero')
+        .respond({
+            data: [{
+                heroId: 1,
+                name: 'Superman',
+                ability: 'strength',
+                strength: 1000 
+            },
+            {
+                heroId: 2,
+                name: 'Batman',
+                ability: 'intelligence',
+                strength: 100
+            }]
+        });
         
         var promise = heroListService.GetHeroes();
+        
         promise.then((data)=>{
-            expect(data).toBe(null);
-            expect(data).toBe(null);                
+            expect(data.data.length).toBe(2);
         })
         .catch((error)=>{
 
         });
+
+        httpBackend.flush();
     });
 });
 
