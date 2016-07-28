@@ -2,6 +2,10 @@ define(["require", "exports", './herohobby.model'], function (require, exports, 
     "use strict";
     var HeroHobbyCtrl = (function () {
         function HeroHobbyCtrl() {
+            this.options = {
+                parentEl: '',
+                show: false
+            };
             this.hobbyList = [];
             this.initialize();
         }
@@ -12,6 +16,12 @@ define(["require", "exports", './herohobby.model'], function (require, exports, 
         };
         HeroHobbyCtrl.prototype.searchHobby = function (searchString) {
             console.log(this.hero.heroId);
+        };
+        HeroHobbyCtrl.prototype.showSpinner = function () {
+            this.options = {
+                show: true,
+                parentEl: ''
+            };
         };
         return HeroHobbyCtrl;
     }());

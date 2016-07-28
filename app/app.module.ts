@@ -14,6 +14,7 @@ import { HeroDetailComponent } from './components/herodetail/herodetail.componen
 import { HeroListComponent } from './components/herolist/herolist.component';
 import { HeroHobbyComponent } from './components/herohobby/herohobby.component'; 
 import { HeroListService } from './components/herolist/herolist.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 export class AppModule{
     constructor(){
@@ -31,6 +32,7 @@ export class AppModule{
         .component('heroList', new HeroListComponent())
         .component('heroDetail', new HeroDetailComponent())
         .component('heroHobby', new HeroHobbyComponent())
+        .component('spinner', new SpinnerComponent())
         .config(AppConfig);      
     }    
 }

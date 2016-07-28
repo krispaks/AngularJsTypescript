@@ -29,6 +29,10 @@ import { IHeroDetail } from '../herodetail/herodetail.model';
 
 class HeroHobbyCtrl{
     hero: IHeroDetail;
+    options = {
+        parentEl: '',
+        show: false
+    };
     hobbyList: Array<IHobby> = [];
     constructor(){
         this.initialize();
@@ -42,6 +46,14 @@ class HeroHobbyCtrl{
 
     private searchHobby(searchString: string){
         console.log(this.hero.heroId);
+    }
+
+    private showSpinner(){
+        //this.options.show = !this.options.show;
+        this.options = {
+            show: true,
+            parentEl: ''
+        };
     }
 }
 
