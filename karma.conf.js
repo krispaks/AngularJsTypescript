@@ -10,11 +10,26 @@ module.exports = function(config) {
         plugins: [
             'karma-jasmine',
             'karma-chrome-launcher',
-            'karma-systemjs'
+            'karma-systemjs',
+            'karma-mocha-reporter'
         ],
         reporters: [
-            'progress'
+            'mocha'
         ],
+        mochaReporter: {
+            colors: {
+                success: 'green',
+                info: 'bgGreen',
+                warning: 'cyan',
+                error: 'bgRed'
+            },
+            symbols: {
+                success: '+',
+                info: '#',
+                warning: '!',
+                error: 'x'
+            }
+        },
         colors: true,
         systemjs: {
             configFile: 'wwwroot/app/system.spec.conf.js',
